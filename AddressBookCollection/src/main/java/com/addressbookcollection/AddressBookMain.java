@@ -16,6 +16,10 @@ public class AddressBookMain {
 		 * created list for contact info
 		 */
 		List<Contact> contact = new ArrayList<Contact>();
+		/**
+		 * creating object of AddNewContact for adding new contact 
+		 */
+		AddNewContact addNew = new AddNewContact();
 		/*
 		 * Passing the parameters to object of contact 
 		 */
@@ -24,6 +28,11 @@ public class AddressBookMain {
 		 * adding contact to list
 		 */
 		contact.add(newContact);
+		System.out.println(" ");
+		/*
+		 * adding new contact to address book
+		 */
+		addNew.addContact(contact);
 		System.out.println(contact);
 	}
 }

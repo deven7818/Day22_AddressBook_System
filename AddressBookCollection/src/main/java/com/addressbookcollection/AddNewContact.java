@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class AddNewContact {
 
 	Scanner sc = new Scanner(System.in);
-	List<Contact> contact = new ArrayList<Contact>();
+	List<Contact> contacts = new ArrayList<Contact>();
 	/**
 	 * Method to add new contact to Contact list
 	 * @param contacts - contact details
@@ -41,7 +41,7 @@ public class AddNewContact {
 		 * Taking input from console to adding new contact to ArrayList contacts
 		 */
 		Contact newContact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
-		contact.add(newContact);
+		contacts.add(newContact);
 	}
 	
 	/**
@@ -54,7 +54,7 @@ public class AddNewContact {
 		String name = sc.next();
 		int duplicate = 0;
 		Contact temp = null;
-		for(Contact cont : contact) {
+		for(Contact cont : contacts) {
 			if(cont.getFirstName().equals(name)) {
 				duplicate ++; //if contact found then increment 
 				temp = cont;
@@ -72,7 +72,7 @@ public class AddNewContact {
 		else if(duplicate > 1) {
 			System.out.println("Multiple contacts found with given name..please enter Email to find contact : ");
 			String email = sc.next();
-			for(Contact cont : contact) {
+			for(Contact cont : contacts) {
 				if(cont.getFirstName().equals(name) && cont.getEmail().equals(email)) {
 					return cont;
 				}
@@ -174,8 +174,25 @@ public class AddNewContact {
 	 * Display contact from list
 	 */
 	public void displayContact() {
-		System.out.println(contact);
+		System.out.println(contacts);
 	}
+	
+	/**
+	 * Method to delete person using person's name
+	 */
+	public void deleteContact() {                                                                       
+		Contact contact = findContact();
+		if (contact == null) {
+			System.out.println("No contact found with the given name");
+			return;
+		}
+		/*
+		 * remove contact
+		 */
+		contacts.remove(contact);                                                                       
+		System.out.println("The contact has been deleted from the Address Book");
+	}
+	
 }
 
 

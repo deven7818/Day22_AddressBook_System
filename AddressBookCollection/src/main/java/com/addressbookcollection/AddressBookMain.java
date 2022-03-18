@@ -7,7 +7,7 @@ import java.util.Scanner;
  * 1. Creating new Contact in address book with first and last names, address,city,
  * state, zip, phone number and email.
  * 2.editing contact with name 
- *
+ * 3. Delete person using person's name
  */
 
 public class AddressBookMain {
@@ -46,6 +46,11 @@ public class AddressBookMain {
 				break;
 
 			case 4:
+				System.out.println("Enter Person to delete");
+				addNew.deleteContact();
+				break;
+				
+			case 5:
 				System.out.println("Exited : ");
 				sc.close();
 				return;

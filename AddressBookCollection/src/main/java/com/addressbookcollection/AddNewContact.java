@@ -194,17 +194,6 @@ public class AddNewContact {
 		contacts.remove(contact);                                                                       
 		System.out.println("The contact has been deleted from the Address Book");
 	}
-	/**
-	 * Method to add multiple persons in Address book
-	 */
-	public void addMultipleContact() {
-		System.out.println("Enter no of contact yo want to enter : ");
-		int num = sc.nextInt();
-		for(int i=0; i<num; i++) {
-			System.out.println("Enter the details of contact");
-			addContact();
-		}
-	}
 	
 }
 

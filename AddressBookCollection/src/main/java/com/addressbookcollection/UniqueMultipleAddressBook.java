@@ -148,4 +148,20 @@ public class UniqueMultipleAddressBook {
     	arr.stream().filter(person -> person.getState().equals(stateName)).forEach(person -> System.out.println(person.getFirstName()));
       }		
     }
+    
+    /**
+     * View person by city or state 
+     * 
+     */
+    public void viewPerson(HashMap<String, ArrayList<Contact>> addressMap) {
+    	List<Contact> contacts;
+    	for (String name : addressMap.keySet()) {
+    		System.out.println("People residing in: " + name);
+    		contacts = addressMap.get(name);
+    		for (Contact contact : contacts) {
+    			System.out.println(contact);
+    		}
+    	}
+
+    }
 }

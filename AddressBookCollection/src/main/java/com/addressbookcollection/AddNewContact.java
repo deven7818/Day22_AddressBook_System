@@ -22,8 +22,10 @@ public class AddNewContact {
 		for(Contact person : contacts) {
 			if(person.getFirstName().equals(name)) {
 				System.out.println("Given Name is already Exists");
+				return;
 			}
 		}
+		addContact();
 	}
 	/*
 	 * adding the person if duplicate is not exist

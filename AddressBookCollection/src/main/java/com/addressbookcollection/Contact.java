@@ -10,6 +10,13 @@ public class Contact {
 	private String phone;
 	private String email;
 	
+	
+	/**
+	 * Default constructor
+	 */
+	public Contact() {
+	}
+
 	/**
 	 * Parameterized constructor
 	 * @param firstName - first name of contact

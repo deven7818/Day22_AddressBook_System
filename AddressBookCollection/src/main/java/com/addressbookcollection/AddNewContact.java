@@ -1,20 +1,50 @@
 package com.addressbookcollection;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class AddNewContact {
 
 	Scanner sc = new Scanner(System.in);
 	List<Contact> contacts = new ArrayList<Contact>();
-	
-	
+	Map<String,AddNewContact> adddressBook = new HashMap<>();
+	Contact contact = new Contact();
+
+	/**
+	 * Method to check person already exist or not by first Name
+	 */
+	public void duplicateContact() {
+		System.out.println("Enter first Name");
+		String name = sc.next();
+		for(Contact person : contacts) {
+			if(person.getFirstName().equals(name)) {
+				System.out.println("Given Name is already Exists");
+			}
+		}
+	}
+	/*
+	 * adding the person if duplicate is not exist
+	 */
+	public void addPerson() {
+		System.out.println("Enter the number of contact you want to enter :");
+		int num = sc.nextInt();
+		for(int i=0; i<num; i++) {
+			System.out.println("Enter the contact details of person");
+			duplicateContact();
+		}
+	}
 	/**
 	 * Method to add new contact to Contact list
+	 * set the value of contact details in list
 	 * @param contacts - contact details
 	 */
 	public void addContact() {
+		Contact person = new Contact();
+		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Please Enter the first Name : ");
 		String firstName = sc.next();
 		
@@ -39,11 +69,17 @@ public class AddNewContact {
 		System.out.println("Please Enter the email : ");
 		String email = sc.next();
 		
-		/**
-		 * Taking input from console to adding new contact to ArrayList contacts
-		 */
-		Contact newContact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
-		contacts.add(newContact);
+		person.setFirstName(firstName);
+		person.setLastName(lastName);
+		person.setAddress(address);
+		person.setCity(city);
+		person.setState(state);
+		person.setZip(zip);
+		person.setPhone(phoneNumber);
+		person.setEmail(email);
+		contacts.add(person);
+		
+		sc.close();
 	}
 	
 	/**

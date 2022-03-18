@@ -63,23 +63,7 @@ public class UniqueMultipleAddressBook {
 		}
 		sc.close();
 	}
-	
-	/**
-	 * Method to delete Address book
-	 */
-	public void deleteAddressBook() {
-		System.out.println("Enter Name of Address Book you want to delete: ");
-		Scanner sc = new Scanner(System.in);
-		String bookName = sc.next();
-		if (addressMap.containsKey(bookName)) {                                       //we use containsKey to check if addressBook present 
-			addressMap.remove(bookName);                                                 // and use remove fun to remove the book
-		} else {
-			System.out.println("AddressBook doesn't exist, Please enter correct name.");
-			deleteAddressBook();
-		}
-		sc.close();
-	}
-	
+
 	/**
 	 * Method to delete Contact in address book
 	 */
@@ -97,6 +81,24 @@ public class UniqueMultipleAddressBook {
 		sc.close();
 	}
 
+
+	
+	/**
+	 * Method to delete Address book
+	 */
+	public void deleteAddressBook() {
+		System.out.println("Enter Name of Address Book you want to delete: ");
+		Scanner sc = new Scanner(System.in);
+		String bookName = sc.next();
+		if (addressMap.containsKey(bookName)) {                                       //we use containsKey to check if addressBook present 
+			addressMap.remove(bookName);                                                 // and use remove fun to remove the book
+		} else {
+			System.out.println("AddressBook doesn't exist, Please enter correct name.");
+			deleteAddressBook();
+		}
+		sc.close();
+	}
+	
 	/**
 	 * Method to print address book
 	 */

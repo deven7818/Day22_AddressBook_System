@@ -8,6 +8,8 @@ import java.util.Scanner;
  * state, zip, phone number and email.
  * 2.editing contact with name 
  * 3. Delete person using person's name
+ * 4. Add multiple persons in address book
+ * 
  */
 
 public class AddressBookMain {
@@ -19,6 +21,11 @@ public class AddressBookMain {
 		 * creating object of AddNewContact for adding new contact
 		 */
 		AddNewContact addNew = new AddNewContact();
+		
+		/**
+		 * adding multiple persons in address book
+		 */
+		addNew.addMultipleContact();
 
 		while (true) {
 			System.out.println("Enter your choice:\n " 

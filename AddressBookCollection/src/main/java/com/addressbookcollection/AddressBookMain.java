@@ -15,6 +15,8 @@ import java.util.Scanner;
  * 8. Search person in city or state across multiple address book
  * 9. view person by city or state
  * 10. Get number of contact i.e. count by city or state 
+ * 11. sort the entries in the address book alphabetically by Person’s name
+ * 12. sort the entries in the address book by City, State, or Zip
  */
 
 public class AddressBookMain {
@@ -102,6 +104,7 @@ public class AddressBookMain {
 				System.out.println("Wrong Input");
 			}
 		}
-
+		
 	}
+	
 }

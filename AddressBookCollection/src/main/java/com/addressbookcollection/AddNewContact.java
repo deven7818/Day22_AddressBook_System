@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddNewContact {
 
@@ -263,6 +264,16 @@ public class AddNewContact {
 			stateList.add(contact);
 			personByState.put(contact.getState(), stateList);
 		}
+	}
+
+	/**
+	 * Method to sort the entries in the address book alphabetically by Person’s name
+	 * used java streams to sort the list 
+	 */
+	public void sortByName() {
+		List<Contact> list = contacts.stream().collect(Collectors.toList());
+		list.stream().sorted((g1, g2) -> ((String) g1.getFirstName()).compareTo(g2.getFirstName()))
+			.forEach(contact -> System.out.println(contact.getFirstName() + " " + contact.getLastName()));
 	}
 
 	
